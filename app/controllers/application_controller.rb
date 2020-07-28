@@ -10,7 +10,7 @@ class ApplicationController < ActionController::API
             secret = Rails.application.secret_key_base
             begin
                 payload = JWT.decode(token, secret)[0] 
-                @user = User.find(payload[“user_id”]
+                @user = User.find(payload[“user_id”])
             rescue
                 render json: {errors: ["Must be logged in."]}, status: :forbidden
             end
