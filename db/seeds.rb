@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Habit.create(name: "Drink Water", details: "Drink 2 liters of water per day", user_id: 1)
+Habit.create(name: "Walk", details: "Walk outside for 30 minutes every day", user_id: 1)
+Habit.create(name: "Meditate", details: "Meditate for 10 minutes", user_id: 1)
+Habit.create(name: "Read More", details: "Read for at least 15 minutes every day before going to sleep", user_id: 1)
+Habit.create(name: "Don't Snooze", details: "Wake up on the first alarm without snoozing!", user_id: 1)

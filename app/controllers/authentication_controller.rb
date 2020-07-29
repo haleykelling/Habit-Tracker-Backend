@@ -1,6 +1,6 @@
 class AuthenticationController < ApplicationController
     skip_before_action :authenticate, only: [:login]
-    
+
     def login
         @user = User.find_by(email: params[:user][:email])
         user_info = {name: @user.first_name, email: @user.email}
@@ -11,7 +11,7 @@ class AuthenticationController < ApplicationController
             secret = Rails.application.secret_key_base
             payload = {user_id: @user.id}
             @token = JWT.encode payload, secret 
-            render json: {user: user_info, token: @token} 
+            render json: {user: user_info, token: @token, habits: @user.habits} 
         end
 
     end
