@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  details: MyText
+  date_last_completed: 2020-07-29
+  current_streak: 1
+  longest_streak: 1
+  user: one
+
+two:
+  name: MyString
+  details: MyText
+  date_last_completed: 2020-07-29
+  current_streak: 1
+  longest_streak: 1
+  user: two
