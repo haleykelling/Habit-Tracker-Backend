@@ -1,5 +1,6 @@
 class AuthenticationController < ApplicationController
-
+    skip_before_action :authenticate, only: [:login]
+    
     def login
         @user = User.find_by(email: params[:user][:email])
         user_info = {name: @user.first_name, email: @user.email}
