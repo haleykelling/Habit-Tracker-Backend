@@ -12,7 +12,8 @@ class HabitsController < ApplicationController
   end
 
   def create
-    @habit = Habit.new(habit_params)
+    new_params = habit_params.merge(user: current_user)
+    @habit = Habit.new(new_params)
 
     if @habit.save
       render json: @habit, status: :created, location: @habit
@@ -45,8 +46,7 @@ class HabitsController < ApplicationController
       :details, 
       :date_last_completed, 
       :current_streak, 
-      :longest_streak, 
-      :user_id
+      :longest_streak
     )
   end
 end
